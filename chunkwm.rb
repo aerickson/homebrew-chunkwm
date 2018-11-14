@@ -9,6 +9,7 @@ class Chunkwm < Formula
   option "without-ffm", "Do not build focus-follow-mouse plugin."
   option "without-border", "Do not build border plugin."
   option "with-purify", "Build purify plugin."
+  option "with-bitbar_notifer", "Build bitbar_notifier plugin"
   option "with-logging", "Deprecated, here for backward compatibility, does not have effect."
   option "with-tmp-logging", "Deprecated, here for backward compatibility, does not have effect."
   option "without-completions", "Do not install completions."
@@ -44,6 +45,11 @@ class Chunkwm < Formula
     if build.with? "purify"
       system "make", "install", "--directory", "src/plugins/purify"
       (pkgshare/"plugins").install "#{buildpath}/plugins/purify.so"
+    end
+      
+    if build.with? "bitbar_notifer"
+      system "make", "install", "--directory", "src/plugins/bitbar_notifer"
+      (pkgshare/"plugins").install "#{buildpath}/plugins/bitbar_notifier.so"
     end
 
     if build.with? "completions"
