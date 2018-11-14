@@ -48,7 +48,7 @@ class Chunkwm < Formula
     end
       
     #if build.with? "bitbar-notifier"
-    system "make", "install", "--directory", "src/plugins/bitbar_notifer"
+    system "make", "install", "--directory", "src/plugins/bitbar_notifier"
     (pkgshare/"plugins").install "#{buildpath}/plugins/bitbar_notifier.so"
     #end
 
