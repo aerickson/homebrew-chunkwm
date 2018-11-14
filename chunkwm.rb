@@ -47,10 +47,10 @@ class Chunkwm < Formula
       (pkgshare/"plugins").install "#{buildpath}/plugins/purify.so"
     end
       
-    if build.with? "bitbar-notifier"
-      system "make", "install", "--directory", "src/plugins/bitbar_notifer"
-      (pkgshare/"plugins").install "#{buildpath}/plugins/bitbar_notifier.so"
-    end
+    #if build.with? "bitbar-notifier"
+    system "make", "install", "--directory", "src/plugins/bitbar_notifer"
+    (pkgshare/"plugins").install "#{buildpath}/plugins/bitbar_notifier.so"
+    #end
 
     if build.with? "completions"
         zsh_completion.install "src/completions/_chunkc"
